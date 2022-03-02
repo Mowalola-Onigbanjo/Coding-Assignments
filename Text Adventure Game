@@ -1,0 +1,318 @@
+""" 
+Docstring
+A.) This game is inspired by the popular Netflix series, The Good Place. 
+In the game, the user gets to play the role of one of the main characters Eleanor, who lived a bad life on Earth and so is surprised when she ends up in the good place. 
+She hides this fact from Micheal,the guide who welcomes her upon her death. 
+Unfortunately, its all a lie and she's really in the bad place. Haha!
+Scene_1: Welcome to the Good Place
+scene_2: Quick flashback to life on earth
+scene_3: Welcome dinner disaster
+
+B.) Known bugs
+None
+"""
+
+
+
+#import exit function to end game
+from sys import exit
+#import time package
+import time 
+
+####################
+# Creating Break Selections
+#######################
+def fail(): #Creating a fail function
+    print("Oops! You've failed. Thank you for playing!")
+    input('To exit game, press any key\n')
+    exit ()
+    
+def selection_1(): #Creating choice to quit
+    print("Press 1 to go to scene_2.")
+    print("Press 2 to quit.")
+    selection_1 = input("> ")
+    for x in selection_1:
+            if selection_1 == '1':
+                scene_2() # This moves us into scene_2
+            if selection_1 == '2':
+                fail() # This moves us into fail
+                break
+                exit ()
+    
+            else:
+                print("Invalid entry. Please try again.\n")
+                
+                
+                
+def selection_2():
+    print("Press 1 to go to scene_3.")
+    print("Press 2 to quit.")
+    selection_2 = input("> ")
+    for x in selection_2:
+            if selection_2 == '1':
+                scene_3() # This moves us into scene_3
+            elif selection_2 == '2':
+                fail() # This moves us into fail
+                break
+                exit ()
+    
+            else:
+                print("Invalid entry. Please try again.\n")
+
+                
+                
+                
+def redo (): #Creating choice to play again
+     #Timer Loop
+        x = 1
+        while x == 1:
+            play =[5,4,3,2,1]
+            for i in play:   
+                print(i)
+                time.sleep(1)
+
+            print(f"""Well, you're still a bad person. Who knows how long you'll last in here before you're caught. \n Until then, enjoy playing nice guy. Or are you already in the bad place but you don't know it. Find out in the series! Hahahahahahahaha!!!!\n""")
+            print('Thank you for playing {name}, hope you had fun. Be good! Lol!!!\n\n')
+                #input('<Press any key to exit>\n')
+                     #initiating replay
+            redo= input(prompt="""Would you like to play again? Please enter [y/n]?\n\n""") 
+            if redo == 'y':
+                    print ("Alright let's go again!\n\n")
+                    print (f""" \n\n\n {50 * '_'}\n\n\n""")
+                    scene_1()
+            elif redo == 'n':
+                    print(f"""\n {30*'_'}\n\n
+                        Thank you for playing, {name}!! Bye and BE GOOD!!!!""")
+                    break
+                    exit ()
+                  
+            else:
+                print("Invalid entry. Please try again.\n")
+            
+                #playing loop
+        
+ 
+       
+        
+#########################################################
+# Defining the scenes in the game
+#########################################################
+
+def scene_1(): #Scene_1: Welcome to the Good Place!
+    print("Presently, you are in Micheal's office. He's welcoming you to the good place.\n\n\n")
+    print(f"""Micheal: Welcome {name} to the good place. You are here because you lived an exemplary life on earth....\n
+    {name} : Wait sorry, you mean I'm dead. What? How? When?\n
+    Micheal: Okay sorry about that, let me walk you through this again .....\n\n""")
+    
+    print('************ Cue Flashback ************ \n\n')
+    
+    print('********************* Flashback******************\n\n')
+    
+    print(f"""At the supermarket, after buying more than enough food to feed 100 homeless people as part of your 
+    weekly humanitarian outreach mission, you saw a car backing out almost about to hit a little girl who ran out 
+    of the supermarket. You intervened and pushed her out of the way. Unfortunately, you did not see that the stack 
+    of trolleys an employee was pushing had lost control and was headed your way. You were hit. 
+    Sadly, the impact of the hit, pushed you right into traffic and a van transporting bees hit you. The bees escaped and
+    also attacked  you. \n
+    Ouch that must have been painful. You died in pain after suffering for a bit.\n""")
+    
+    print (f""" Micheal: Yes, so that's what happened. Any other questions before we proceed with your tour of the Good         Place.\n{name}: Errrrr.............""")
+    print("Uh oh... that doesn't really sound like you at all. \n Humanitarian? Homeless people? Being nice to people??? \n")
+    
+    print (f"""
+    a. Bring it up later. 
+    b. Never bring it up.""")
+    
+    option_1 = input(prompt = "\n Something must be wrong somewhere.... What are you going to do???\n").lower()
+    if option_1 == 'a' or option_1 == 'bring it up later' or option_1 == 'later' or option_1 == 'bring it up':
+        print("If I'm here, I guess I might have done something right.... at some point in my life maybe")             
+        
+    elif option_1 == 'b' or option_1 ==  'never'  or option_1 == 'never bring it up' :
+            print("I mean what Micheal doesn't know won't hurt him. The program can't make a mistake. Am I right or am I right!!")
+
+    else:
+            print("Invalid entry. Please try again.\n")
+            input('press enter to continue\n')
+            print (f""" Go Again
+            {20 * '_'}\n""")
+            scene_1()
+
+
+
+    input('Press enter to continue\n') #Player progresses if right selection was made
+    
+    print(f""" Micheal: {name} I'm so happy to let you that you have the highest ranking good people points here. 
+    For that, we'll be throwing you a welcome dinner later tonight. I'll fill you in on the details. 
+    Welcome to the good place once again. Let's join the others for the rest of the orientation and welcome.\n""")
+    selection_1()
+
+    scene_1()
+
+
+
+ #scene_2() # We move on to scene_2 of the game
+
+
+
+def scene_2(): #Scene_2: Flashback to life lived as a bad person
+    print("Yay! You made it to the orientation. Will you get caught here???\n")
+    input('Press enter to continue \n')
+    print(f""" You didn't tell Micheal about the possible error. Now, you're at the town square seated amongst other good       people for the orientation and welcoming ceremony. While Micheal gives his welcome address, you have a flashback of         your last memory alive .......
+    ********************* Flashback ********************** \n""" )  
+    print(f"""\n In this scene, you are arriving at a supermarket, getting groceries for game night at your apartment           complex. 
+    After searching and waiting for a parking spot for over 7 minutes, you finally spot a free parking space but the space     is designated for use by customers who make use of wheelchairs. 
+    You take a minute to think about this,'Do I park here or not?'. 
+    A car starts honking behind you because its hunting for a parking space.....\n""")
+    print ('Here comes another dilemma', end ="..............................\n")
+    input(prompt='Press enter to continue\n')
+          
+    print (f"""
+          a. Park in the spot without considering others who might really need the spot while you are shopping
+          b. Flip off the person honking at you
+          c. park in the spot and flip the person off.""")
+    option_2 = input (prompt = ' Select an option\n').lower()
+    
+    if 'a'in option_2 or 'park' in option_2:
+          print ("Wow! You would really do that.... okay then")
+    elif 'b' in option_2  or 'flip off' in option_2:
+        print ("That person really deserves that right? Hmm! maybe, maybe not!")
+        
+    elif 'c' in option_2 or 'park in spot and flip off' in option_2 or 'park and flip off' in option_2:
+        print ("I guess you're having a bad day. But did you really need to take it out on them?")
+        
+    else :
+        print('Oops, I think you made an invalid selection.\n')
+        input (prompt = 'Press enter to continue\n')
+        scene_2()
+
+    print (f""""Okay now you've made your choice. You grumpily go in to get your shopping done. 
+     There are 2 trolleys left outside. One has a faulty looking tire. The other looks better but it 
+     has an empty bottle in it. From the far corner of your eye, you spot a mother and a fussy baby approaching.
+     You quickly take the better trolley and hurry inside. \n
+     Now you're almost done with your shopping. You're on the aisle with chicken nuggets. There's only one left in your
+     favorite brand. A little child approaches you, trying to get the same pack. 
+     Now thats your absolute favorite and you know after game night, you'll probably be extremely cranky and need your
+     favorite comfort food, nuggets\n\n""")
+    input(prompt='Press enter to continue\n')      
+    print (f"""
+          a. Take it
+          b. Leave it""")
+    
+    option_3 = input(prompt = "It's time to make a choice. After a grumpy day are you willing to give up your last box of comfort food to a little stranger?\n").lower()
+
+
+    if option_3 == 'a' or option_3 == 'take' or option_3 == 'take it':
+        print ("I mean you're only human. You need your comfort food after all. Let her parents sort her out ....")
+    
+    elif option_3 == 'b' or option_3 == 'leave' or option_3 == 'leave it':
+          print (f"""Good luck to you. Well I guess you don't mind sleeping grumpy. 
+          Just so you know, you were hogging all the food at game night. 
+          Totally ruined the night for others...""")
+            
+        
+    else :
+        print('Oops, I think you made an invalid selection.\n\n')
+        input(prompt = 'press enter to continue\n\n\n')
+        scene_2()
+    selection_2()
+
+    # Takes user back to the beginning to try again
+
+
+    #scene_3() # This moves us into scene_3:Welcome Dinner Disaster
+
+
+
+def scene_3(): #Scene_3:Welcome Dinner Disaster
+    """ This scene is set in the house of your soon to be worst nightmare, fellow Good Place dweller, Tahani"""
+    print ("You're back to the present day.... Dinner in honor of you at Tahani's mansion.\n")
+    print(f"""You've made it to your welcome dinner as the best person to ever be in the Good Place without anyone 
+        detecting that you are a fraud!\n
+          Will your luck carry you through the night?\n
+          Let's find out!!!!\n""")
+    input('Press enter to continue\n')
+    print(f""" \n earlier in the day, you were informed by Micheal that you would have to give a speech at the dinner. He advised you to touch a little bit on your life as a volunteer. 
+        You are lost for words because you were a cranky sales agent, but its too late to blow to cover now.\n\n""")
+    input(prompt = 'Press enter to continue\n\n')
+    print(f""" Tahani, a lady you met at orientation earlier, walks up to you. You don't like her because you feel she's a condescending snob. But you have to be nice so you don't blow your cover and get sent to the bad place. 
+       She strikes up a conversation with you, bragging about all the money she raised and how she grew up in a privileged home but her  parents only focused on her musical prodigy elder sister. She proceeds to talk your ear off about how        she didn't let that stop her from raising more money than her sister ever did.\n\n""")
+    input(prompt = "She's a talker isn't she.And you thought you had mummy and daddy issues (rolls eyes) Phew!. \n\n Press enter to continue.\n\n")
+    print (f""" At this point, you smile and nod your head but all you're thinking about is how you can steal some more shrimp cocktails to take back
+    to your sad clown house. Speaking of, it won't be a bad idea if some of those ugly looking clowns starts chasing Tahani. At least you won't have to 
+    listen to her anymore.
+    Your eye catches your soulmate across the room, Chidi, a nerdy philosophy professor. You smile but start daydreaming about a hotter looking soulmate.
+    Your day dream is cut short by Micheal, who invites you to give your speech. Surprisingly or not so surprisingly, considering the fact that you lied
+    to elderly people daily for a living, you give a decent speech, all things considered. The night seems to have been a success!\n""")
+    input(prompt = "Did you really just successfully pull off the largest scam of your life?? \n Let's see!\n Press enter to continue\n")
+    print(f""" You wake up to a roaring alarm and so much noise. You ask Chidi what's going on. He explains that huge flying shrimps, ugly clowns and hot models
+    are disrupting the peace and chasing people. You attempt to step out but realise, you're the only one dressed differently. So you hide and wait out the
+    storm while Micheal tries to restore order. Soon after, order is restored but everywhere is in a mess, you run into Micheal who apologizes for the mess and explains
+    to you that this must have happened because someone has been wrongly brought to the Good Place.\n""")
+    print("uh oh! Looks like you're finally about to be exposed... or not? \n Press Enter to continue\n")
+    print(f"""
+    a. Save Micheal the stress and offer to find out who was wrongly placed.
+    b. Blame Micheal for the system malfunction.
+    c. Say nothing and walk away.\n\n""")
+    final_option = input (prompt= "What's it going to be?\n").lower()
+    if 'a'in final_option or 'save micheal' in final_option or 'help' in final_option:
+        print ("You need to save yourself. Time to look for a fall guy....")
+        redo()
+       
+    elif 'b'in final_option or 'blame micheal' in final_option or 'blame micheal for system malfunction' in final_option:
+        print ("Well, it's not your fault you ended up here. So, it has to be Micheal's.")
+        redo()
+    
+            
+    elif 'c' in final_option or'say nothing' in final_option or 'walk away' in final_option:
+        print ("It's probably best to ignore the problem. It'll go away ...eventually")
+        redo()
+        exit()
+         
+    
+    else :
+        print('Oops, I think you made an invalid selection.\n')
+        input(prompt ='\n Press enter to continue. \n')
+        
+    
+    print("Press 1 to go back to scene_3")
+    print("Press 2 to quit.")
+    selection = input("> ")
+    if selection == '1':
+        scene_3() # This moves us into scene_3
+
+    elif selection == '2':
+         fail() # This moves us into fail
+    else:
+        print("Invalid entry. Please try again.\n")
+        scene_3() # Takes user back to the beginning of scene_2 to try again
+    
+
+ #################################
+# Creating User
+#################################
+name = input(prompt="Please enter your name\n").capitalize()
+    
+print(f""" Welcome {name}, this game is inspired by the Netflix series, The Good Place. It is about a lady, Eleanor,
+who lived a terrible life on earth. She is surprised to find herslf in the good place when she dies because she knows
+how unkind she had been to others when she was alive. She tries to keep this secret to herself and do everything within 
+her power to earn her spot in the good place by being kind to those around her. 
+Let's see if you really can earn yourself a spot in the good place, or will you be sent to the bad place? """)
+print(f""" Welcome {name}, let's play. \n""")  #Welcome message to player to introduce the game
+input(prompt = "Press Enter to begin")
+print (f""" {30 * '_'}""")
+scene_1() 
+
+
+   
+
+
+    ########################
+    #Playing Game
+    ########################
+
+name()  #creating player
+scene_1() # Calling the first function to start the game
+scene_2() # Moving to the next scene
+scene_3() # Entering the final scene
+    
+ 
